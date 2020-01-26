@@ -1,24 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Highlight from 'react-highlight.js';
+
+// for refreshing the highlighting https://codepen.io/shotastage/pen/KaKwya
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="wrapper">
+        <div className="sidebar">
+          <ul>
+            <li><img className="sidebar-arrow" src="./icons/arrow_down.svg" /><img className="sidebar-icon" src="./icons/folder.svg" />home</li>
+              <ul>
+                <li><img className="sidebar-arrow" src="./icons/arrow_right.svg" /><img className="sidebar-icon" src="./icons/file.svg" />index.js</li>
+                <li><img className="sidebar-arrow" src="./icons/arrow_right.svg" /><img className="sidebar-icon" src="./icons/file.svg" />index.html</li>
+                <li><img className="sidebar-arrow" src="./icons/arrow_right.svg" /><img className="sidebar-icon" src="./icons/file.svg" />style.css</li>
+              </ul>
+            <li><img className="sidebar-arrow" src="./icons/arrow_down.svg" /><img className="sidebar-icon" src="./icons/folder.svg" />static</li>
+              <ul>
+                <li><img className="sidebar-arrow" src="./icons/arrow_right.svg" /><img className="sidebar-icon" src="./icons/file.svg" />logo.png</li>
+              </ul>
+          </ul>
+        </div>
+        <div className="workspace">
+          <Highlight language={"javascript"}>
+            <textarea autofocus>
+            </textarea>
+          </Highlight>
+        </div>
+      </div>
     </div>
   );
 }
